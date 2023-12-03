@@ -47,7 +47,7 @@ a {
     width: 100%;
     top: 0;
     height: 420px;
-    background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0 / 100%)), url(/assets/img/matrix.gif);
+    background-image: linear-gradient(to bottom, rgb(0 0 0 / 0%), rgb(0 0 0 / 100%)), url(matrix.gif);
     z-index: -1;
     filter: hue-rotate(93deg);
     -webkit-filter: hue-rotate(93deg);
