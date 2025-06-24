@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Квест</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+
+        <script>
+            a = "yA6J3";
+            b = "K5012";
+            c = "3F738";
+
+            function checkCode() {
+                target = document.getElementById("input");
+                if (target.value == String(b + c + a)) {
+                    document.getElementById('good').setAttribute('active', '');
+                } else {
+                    document.getElementById('bad').setAttribute('active', '');
+                }
+            }
+        </script>
+        <style>
+            #bad {
+                background-color: rgb(228, 56, 56);
+            }
+            #good {
+                background-color: rgb(41, 143, 41);
+            }
+            #bad, #good {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 20px;
+                color: white;
+            }
+            #bad[active], #good[active] {
+                display: flex;
+            }
+            body, html {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .body {
+                max-width: 400px;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+            }
+            .body input {
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            .body h1, #bad h1, #good h1 {
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="bad">
+            <h1>НЕВЕРНЫЙ ПАРОЛЬ</h1>
+        </div>
+        <div id="good">
+            <h1>РАЗГЕРМЕТИЗАЦИЯ ОСТАНОВЛЕНА</h1>
+        </div>
+        <div class="body">
+            <h1>ВВЕДИТЕ ПАРОЛЬ</h1>
+            <input id="input" type="password" class="form-control" placeholder="Вводить сюда">
+            <button type="button" class="btn btn-danger" onclick="checkCode()">Проверить</button>
+        </div>
+    </body>
+</html>
