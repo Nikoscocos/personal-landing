@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Мое Приложение</title>
+    
+    <!-- iOS мета-теги -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Мое Приложение">
+    
+    <!-- Иконки -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon-114.png">
+    
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(#87CEEB, #E0F7FF);
+            height: 100vh;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        
+        .app-header {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-header">
+        <h1>Мое Приложение</h1>
+    </div>
+    
+    <div class="content">
+        <!-- Контент вашего приложения -->
+    </div>
+
+    <script>
+        // Предотвращение zoom при двойном тапе
+        var lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    </script>
+</body>
+</html>
